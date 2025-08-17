@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>AUPES</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" aria-label="Voltar para a página inicial">
+                <img class="logo" src="img/AUPES.png" alt="Logo AUPES">
+            </a>
+            <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="sobre-nos.html">SOBRE NÓS</a></li>
+                    <li><a href="contato.html">CONTATO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="principal">
+            <div class="conteudo-campeonato">
+                <div class="imagem-container">
+                    <a href="https://campeonato.ifut.com.br/c/campeonato-municipal-de-futebol-7-2025/" target="_blank">    
+                        <img src="img/camp.png" alt="Tabela do Campeonato" class="imagem-campeonato">
+                        <span class="legenda-imagem">CAMPEONATO</span>
+                        
+                    </a>
+                </div>
+                <div class="imagem-container">
+                    <a href="https://campeonato.ifut.com.br/c/campeonato-municipal-de-futebol-7-2025/" target="_blank">
+                        <img src="img/rodada.png" alt="Rodada Atual" class="imagem-rodada">
+                        <span class="legenda-imagem">RODADA</span>
+                    </a>
+                </div>
+            </div>
+            <p class="instrucao">Clique na imagem para ver mais</p>
+        </section>
+
+        <section class="patrocinadores-lateral">
+            <div class="patrocinadores-coluna esquerda">
+                <a href="https://www.instagram.com/drycentergesso/" target="_blank"><img src="img/dry-center.jpg" alt="Dry Center" class="patrocinador"></a>
+                <a href="https://www.instagram.com/pato.esporte/" target="_blank"><img src="img/prefeitura.jpg" alt="Prefeitura" class="patrocinador"></a>
+                <a href="https://www.instagram.com/azuriz_iapb/" target="_blank"><img src="img/azuriz.jpg" alt="Azuriz" class="patrocinador"></a>
+            </div>
+
+            <div class="patrocinadores-coluna direita">
+                <a href="https://www.instagram.com/lops_lanches/" target="_blank"><img src="img/lopes.jpg" alt="Lopes" class="patrocinador"></a>
+                <a href="https://www.facebook.com/ClaudineiMudancasPatoBranco#" target="_blank"><img src="img/claudinei.jpg" alt="Claudinei" class="patrocinador"></a>
+                <a href="https://www.instagram.com/pajeana_sports/" target="_blank"><img src="img/pajeana.jpg" alt="Pajeana" class="patrocinador"></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="img/AUPES1.png" alt="Logo AUPES" class="logo-footer">
+        <div class="footer-info">
+            <p>AUPES - PATO BRANCO</p>
+            <p>ASSOCIAÇÃO UNIDOS PELO ESPORTE</p>
+            <p>Tel: (46)9923-2160 | Email: aupes@gmail.com </p>
+        </div>
+    </footer>
+
+    <script src="script.js">
+        document.addEventListener('DOMContentLoaded', function() {
+    // Menu mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+    });
+    
+    // Melhoria para touch: fecha menu ao clicar em um item
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                navMenu.classList.remove('active');
+            }
+        });
+    });
+    
+    // Ajusta dinamicamente a altura das imagens
+    function adjustImageHeights() {
+        if (window.innerWidth <= 768) {
+            const images = document.querySelectorAll('.imagem-campeonato, .imagem-rodada');
+            const windowHeight = window.innerHeight;
+            
+            images.forEach(img => {
+                img.style.maxHeight = (windowHeight * 0.35) + 'px';
+            });
+        }
+    }
+    
+    // Executa no carregamento e no redimensionamento
+    adjustImageHeights();
+    window.addEventListener('resize', adjustImageHeights);
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="style.css">
+    <title>AUPES-CONTATO</title>
+</head>
+<body>
+    <body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" aria-label="Voltar para a página inicial">
+                <img class="logo" src="img/AUPES.png" alt="Logo AUPES">
+            </a>
+            <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="sobre-nos.html">SOBRE NÓS</a></li>
+                    <li><a href="contato.html">CONTATO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="contato">
+            <h2 class="titulo-contato">Fale Conosco</h2>
+            <form action="#" method="post" class="form-contato">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+                <button type="submit" class="btn-enviar">Enviar</button>
+            </form>
+            <div class="informacoes-contato">
+                <h3>Informações de Contato</h3>
+                <p>Email: <a href="mailto:aquilles@aupes.com"></a>
+                <p>Telefone: <a href="tel:+5544999999999">+55 44 99999-9999</a></p>
+                <p>Endereço: Rua Exemplo, 123, Pato Branco - PR</p>
+            </div>  
+        
+
+             
+        
+        </section>
+    </main>
+</body>
+<footer>
+        <img src="img/AUPES1.png" alt="Logo AUPES" class="logo-footer">
+        <p class="copyright">&copy; Associação Unidos Pelo Esporte - Pato Branco 2025</p>
+</footer>
+
+    <script src="script.js">
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
